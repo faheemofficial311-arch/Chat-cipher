@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>CIPHER://</title>
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+<div class="wrap">
+
+  <header>
+    <div class="tag">// SECURE CHAT LAYER</div>
+    <h1>CIPHER<span class="blink">_</span></h1>
+    <div class="sub">custom letter-swap + reverse cipher — encode messages before you send them</div>
+  </header>
+
+  <div class="tabs">
+    <div class="tab active" data-mode="encrypt">ENCRYPT</div>
+    <div class="tab" data-mode="decrypt">DECRYPT</div>
+  </div>
+
+  <div class="panel">
+    <label id="inLabel">PLAIN MESSAGE</label>
+    <textarea id="input" placeholder="Type your message..."></textarea>
+
+    <div class="row">
+      <button id="runBtn">RUN ▶</button>
+      <button class="ghost" id="clearBtn">CLEAR</button>
+      <button class="ghost" id="swapBtn">⇄ SWAP MODE</button>
+    </div>
+
+    <div class="out">
+      <label id="outLabel">CIPHERTEXT</label>
+      <textarea id="output" readonly placeholder="Result appears here..."></textarea>
+      <div class="row">
+        <button class="ghost" id="copyBtn">COPY RESULT</button>
+        <span class="copied" id="copiedTag">copied ✓</span>
+      </div>
+    </div>
+  </div>
+
+  <footer>
+    rule: Z→5 · E→9 · K→7 · Y→3 · S→4 (fixed swaps, applied first)<br>
+    every other letter swaps with its <code>26 − position</code> mirror, then the whole message is reversed<br>
+    runs entirely in your browser — nothing is sent to a server
+  </footer>
+</div>
+
+<script src="js/script.js"></script>
+</body>
+</html>
